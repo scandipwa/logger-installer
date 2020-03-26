@@ -58,7 +58,6 @@ class Installer extends LibraryInstaller
      */
     public function uninstall(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
-        \file_put_contents("test", "uninstalled");
         $this->modifyDiXml('ScandiPWA\Logger\Cloud', 'Magento\Framework\Logger\Monolog');
     }
     
@@ -68,7 +67,6 @@ class Installer extends LibraryInstaller
      */
     public function install(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
-        \file_put_contents("test", "installed");
         parent::install($repo, $package);
         $this->modifyDiXml('Magento\Framework\Logger\Monolog', 'ScandiPWA\Logger\Cloud');
     }
